@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  server:
+    build: ./server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+  redis:
+    image: redis:alpine
